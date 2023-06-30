@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
-app.use('/', placeholderRoutes);
+app.use('/v1/', placeholderRoutes);
 
 // LISTEN FOR REQUESTS
 app.listen(port, () => {
