@@ -10,7 +10,7 @@ const app = express();
 // RATE LIMITER
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000,
-    max: 10
+    max: process.env.NODE_ENV === 'prod' ? 10 : 1000
 });
 
 // MIDDLEWARE
