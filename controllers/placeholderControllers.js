@@ -55,7 +55,7 @@ const getNamedColorPlaceholder = async (req, res) => {
         const ctx = canvas.getContext('2d');
 
         // Set canvas styles
-        ctx.fillStyle = `${color}`;
+        ctx.fillStyle = color;
         ctx.fillRect(0, 0, width, height);
 
         // Set font styles
