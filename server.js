@@ -1,21 +1,21 @@
 require('dotenv').config();
 const express = require('express');
 const port = process.env.PORT;
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 const placeholderRoutes = require('./routes/placeholderRoutes');
 
 // EXPRESS APP
 const app = express();
 
 // RATE LIMITER
-const limiter = rateLimit({
-    windowMs: 10 * 60 * 1000,
-    max: process.env.NODE_ENV === 'prod' ? 10 : 1000
-});
+// const limiter = rateLimit({
+//     windowMs: 10 * 60 * 1000,
+//     max: 10
+// });
 
 // MIDDLEWARE
 app.use(express.json());
-app.use(limiter);
+// app.use(limiter);
 app.use((req, res, next) => {
     console.log(req.method, req.path);
     next();
